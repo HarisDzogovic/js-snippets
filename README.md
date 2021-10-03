@@ -4,8 +4,14 @@
 
 - [JavaScript Snippets](#JavaScript-Snippets)
   - [Section: Arrays](#Section-Arrays)
+    - [Array Initialization](#Array-Initialization)
     - [Add element(s) to an array](#Add-elements-to-an-array)
     - [Remove element(s) from an array](#Remove-elements-from-an-array)
+    - [Copy element(s) of array](#Copy-elements-of-array)
+    - [Merge two arrays](#Merge-two-arrays)
+    - [Check equality of arrays](#Check-equality-of-arrays)
+    - [Apply operation on all elements of an array](#Apply-operation-on-all-elements-of-an-array)
+    - [Filter elements of an array](#Filter-elements-of-an-array)
 
 ## Section: Arrays
 
@@ -370,3 +376,164 @@ console.log(equal13);
 > True
 >
 > False
+
+### Apply operation on all elements of an array
+
+Apply operation on all elements with map function
+
+---
+
+```JavaScript
+var numbers = [42,43,1,2,3];
+var mappedNumbers = numbers.map(function (number) { return number * 2 });
+
+console.log(mappedNumbers);
+```
+> Output: [84, 86, 2, 4, 6]
+
+Apply operation on all elements with map function (ECMAScript 6)
+
+---
+
+```JavaScript
+var numbers = [42,43,1,2,3];
+var mappedNumbers = numbers.map(number => number * 2);
+
+console.log(mappedNumbers);
+```
+> Output: [84, 86, 2, 4, 6]
+
+### Filter elements of an array
+
+Apply filter operation on all elemnts of an array
+
+---
+
+```JavaScript
+var numbers = [1,2,3,4,5,6,7,8];
+var oddNumbers = numbers.filter(function(number) {
+        return number % 2 === 1;
+});
+
+console.log(oddNumbers);
+```
+> Output: [1, 3, 5, 7]
+
+Apply filter operation on all elemnts of an array (ECMAScript 6)
+
+---
+
+```JavaScript
+var numbers = [1,2,3,4,5,6,7,8];
+var oddNumbers = numbers.filter(number => number % 2 === 1);
+
+console.log(oddNumbers);
+```
+> Output: [1, 3, 5, 7]
+
+### Check if element is in array
+
+Check if element is inside array with in operator
+
+---
+
+```JavaScript
+var numbers = [1,2,3,4,5,6,7,8];
+var contains = 3 in numbers;
+var notContains = 9 in numbers;
+
+console.log(contains);
+console.log(notContains);
+```
+> Output: 
+>
+> True
+>
+> False
+
+Check if element is inside array with includes() function
+
+---
+
+```JavaScript
+var numbers = [1,2,3,4,5,6,7,8];
+var contains = numbers.includes(3);
+var notContains = numbers.icludes(9);
+
+console.log(contains);
+console.log(notContains);
+```
+> Output: 
+>
+> True
+>
+> False
+
+### Get part of array
+
+Get a part of an array with splice() function
+
+---
+
+```JavaScript
+var numbers = [1,2,3,4,5,6,7,8];
+var first3 = numbers.splice(0, 3);
+var last3 = numbers.splice(numbers.length-3,3);
+
+console.log(first3);
+console.log(last3);
+```
+> Output: 
+>
+> [1, 2, 3]
+>
+> [6, 7, 8]
+
+## Get unique values of array
+
+Get unique values of array with indexOf() and filter function
+
+---
+
+```JavaScript
+var numbers = [1,2,3,1,2,3,1,2];
+
+function isUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
+var uniqueNumbers = numbers.filter(isUnique);
+
+console.log(uniqueNumbers);
+```
+> Output: [1, 2, 3]
+
+## Section: Dictionaries
+
+## Section: Queue (FIFO)
+
+## Section: Stack (LIFO)
+
+## Section: Conversion
+
+### String to Boolean
+
+```JavaScript
+var string1 = "true";
+var value1 = (string1.toLowerCase() == "true");
+
+var string2 = "false";
+var value2 = JSON.parse(string2);
+```
+
+### Boolean to String
+
+```JavaScript
+var bool1 = true;
+var string1 = bool1.toString();
+
+var bool2 = false;
+var string2 = bool2.toString();
+```
+
+## Section: Logical Operations
