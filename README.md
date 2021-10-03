@@ -12,6 +12,16 @@
     - [Check equality of arrays](#Check-equality-of-arrays)
     - [Apply operation on all elements of an array](#Apply-operation-on-all-elements-of-an-array)
     - [Filter elements of an array](#Filter-elements-of-an-array)
+    - [Check if element is in array](#Check-if-element-is-in-array)
+    - [Get part of array](#Get-part-of-array)
+  - [Get unique values of array](#Get-unique-values-of-array)
+  - [Section: Dictionaries](#Section-Dictionaries)
+  - [Section: Queue (FIFO)](#Section-Queue-FIFO)
+  - [Section: Stack (LIFO)](#Section-Stack-LIFO)
+  - [Section: Conversion](#Section-Conversion)
+    - [String to Boolean](#String-to-Boolean)
+    - [Boolean to String](#Boolean-to-String)
+  - [Section: Logical Operations](#Section-Logical-Operations)
 
 ## Section: Arrays
 
