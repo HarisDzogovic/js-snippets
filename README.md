@@ -14,6 +14,7 @@
 Empty array
 
 ---
+
 ```JavaScript
 var array = [];
 var array = new Array();
@@ -23,6 +24,18 @@ Single-dimensonial array
 
 ---
 
+```JavaScript
+var numbers = [1,2,3];
+var strings = ["1","2","3"];
+```
+
+Multidimensonial array
+
+---
+
+```JavaScript
+var numbers = [[1,2],[3,4],[5,6]];
+```
 
 ### Add element(s) to an array
 
@@ -40,6 +53,8 @@ Functions
 - **start:** Position to add element(s).
 - **end:**  Number of elements to remove.
 - **elements[]:** New element(s) to add.
+
+---
 
 Add one element to the end of an array
 
@@ -107,6 +122,8 @@ Functions
 
 > **Syntax**
 > delete
+
+---
 
 Remove last element of an array
 
@@ -225,7 +242,11 @@ Functions
 - **end:**  Number of elements to remove.
 - **elements[]:** New element(s) to add.
 
+---
+
 Copy whole array
+
+---
 
 ```JavaScript
 var numbers = [42,43,1,2,3];
@@ -242,6 +263,8 @@ console.log(copyNumbers);
 
 Copy whole array (ECMAScript 6)
 
+---
+
 ```JavaScript
 var numbers = [42,43,1,2,3];
 var copyNumbers = [];
@@ -254,3 +277,96 @@ console.log(copyNumbers);
 >[42,43,1,2,3] 
 >
 >[42,43,1,2,3] 
+
+### Merge two arrays
+
+Functions
+
+---
+
+> **Syntax**
+> concat(elements)
+
+- **elements:** Arrays and/or values to concat to current array
+
+---
+
+Merge one array to other array with concat
+
+---
+
+```JavaScript
+var numbers1 = [42,43,1,2,3];
+var numbers2 = [9,8,7,6,5];
+var numbers12 = numbers1.concat(numbers2);
+console.log(numbers12);
+```
+> Output: [42,43,1,2,3,9,8,7,6,5]
+
+Merge one array to other array (ECMAScript 6)
+
+---
+
+```JavaScript
+var numbers1 = [42,43,1,2,3];
+var numbers2 = [9,8,7,6,5];
+var numbers12 = [...numbers1,...numbers2];
+console.log(numbers12);
+```
+> Output: [42,43,1,2,3,9,8,7,6,5]
+
+### Check equality of arrays
+
+Check equality with join function
+
+---
+
+```JavaScript
+var numbers1 = [42,43,1,2,3];
+var numbers2 = [42,43,1,2,3];
+var numbers3 = [2,3,4,5,6,7];
+
+var equal12 = numbers1.join() === numbers2.join();
+var equal13 = numbers1.join() === numbers3.join();
+
+console.log(equal12);
+console.log(equal13);
+```
+> Output: 
+>
+> True
+>
+> False
+
+Check equality with custom function
+
+---
+
+```JavaScript
+var numbers1 = [42,43,1,2,3];
+var numbers2 = [42,43,1,2,3];
+var numbers3 = [2,3,4,5,6,7];
+
+function arraysEqual(a, b) {
+    if (a === b) return true;
+    if (a == null || b == null) 
+        return false;
+    if (a.length !== b.length) 
+        return false;
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
+}
+
+var equal12 = arraysEqual(numbers1,numbers2);
+var equal12 = arraysEqual(numbers1,numbers3);
+
+console.log(equal12);
+console.log(equal13);
+```
+> Output: 
+>
+> True
+>
+> False
