@@ -46,7 +46,6 @@ for LINE in "${TOC[@]}"; do
           echo -n "- "
           ;;
     esac
-    
     LINK=${LINE}
     # Detect markdown links in heading and remove link part from them
     if grep -qE "\[.*\]\(.*\)" <<< "${LINK}"; then
