@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 FILE=${1:?No file was specified as first argument}
 
 declare -a TOC
