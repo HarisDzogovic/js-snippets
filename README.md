@@ -547,3 +547,58 @@ var string2 = bool2.toString();
 ```
 
 ## Section: Logical Operations
+
+## Section: Functions
+
+### The arguments object
+
+```JavaScript
+function foo(param1, param2, param3) {
+  console.log(arguments[0]);
+  console.log(arguments[1]);
+  console.log(arguments[2]);
+}
+
+foo(42, 0, 1);
+```
+> Output: 
+>
+> 42
+>
+> 0
+>
+> 1
+
+## Section: Expressions and Operators
+
+### Spread Operator
+
+```JavaScript
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const values = [42, 0, 1];
+
+console.log(sum(...numbers));
+```
+> Output: 
+>
+> 43
+
+```JavaScript
+let args = [42, 0, 1];
+var [head, ...tail] = args; // head = 42, tail = [0, 1]
+```
+
+```JavaScript
+const addToEnd = (list) => {
+    return [...list, 0];  
+}
+
+------------------------------
+
+const addToEnd = (list) => {
+    return list.concat([0]);
+}
+```
